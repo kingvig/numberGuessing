@@ -11,8 +11,7 @@ function check(){
     document.querySelector('.number').textContent = guess;
     if(!guess){
         document.querySelector('.message').textContent = '😂😂😂Please enter a number';
-        highScore = score;
-        document.querySelector('.highscore').textContent = highScore;
+        
     }
     else if(guess==numberToGuess){
         
@@ -20,6 +19,10 @@ function check(){
           'you guessed the number';
           document.querySelector('body').style.backgroundColor='#60b347';
           document.querySelector('.number').style.width='30rem';
+          if(highScore < score){
+            highScore = score;
+          }
+          document.querySelector('.highscore').textContent = highScore;
     }
     else if(guess<numberToGuess){
         if (score > 1) {
